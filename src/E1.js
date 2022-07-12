@@ -11,14 +11,36 @@ const data = `id,name,surname,gender,email,picture
 61539018,Marco,Calvo,male,marco.calvo@example.com,https://randomuser.me/api/portraits/men/86.jpg`;
 
 
-const fromCSV = (csv) => {
+const fromCSV = (csv, nAttrs) => {
+
     // Separamos el csv por los saltos de linea
     const outputVal = data.split('\n');
-    // Recorremos cada uno de las entradas del array para separarlas
-    for (let i = 0; let < outputVal.entries; i++){
-        console.log(outputVal[i]);
+
+    // Diccionario vacio para uso posterior
+    let person = {};
+    let people = [];
+
+    // Separamos la primera linea del array
+    const dataName = outputVal[0].split(',');
+
+    // Si no se introduce la cantidad de valores o se piden mostrar mas valores de los que hay, se mostraran los atributos que existan
+    if (nAttrs === undefined || nAttrs > dataName.length) nAttrs = dataName.length;
+
+    // Recorremos cada uno de las entradas del array con datos de personas
+    for (let i = 1; i < outputVal.length; i++) {
+        const dataValues = outputVal[i].split(',');
+
+        // Recorremos el array e introducimos los valores
+        for (let x = 0; x < nAttrs; x++) {
+            person[dataName[x]] = dataValues[x];
+        }
+        
+        people.push(person);
     }
+    console.log(people);
+    return people;
 };
 
+// Mostramos en el log
 const result = fromCSV(data);
 console.log(result);
