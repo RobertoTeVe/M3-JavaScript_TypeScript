@@ -23,11 +23,12 @@ const fromCSV = (csv, nAttrs) => {
     // Separamos la primera linea del array
     const dataName = outputVal[0].split(',');
 
-    // Si no se introduce la cantidad de valores o se piden mostrar mas valores de los que hay, se mostraran los atributos que existan
+    // Si no se introduce la cantidad de atributos o se piden mostrar mas valores de los que hay, se mostraran los atributos que existan
     if (nAttrs === undefined || nAttrs > dataName.length) nAttrs = dataName.length;
 
     // Recorremos cada uno de las entradas del array con datos de personas
     for (let i = 1; i < outputVal.length; i++) {
+        // Separamos los valores y los metemos en un array
         const dataValues = outputVal[i].split(',');
 
         // Recorremos el array e introducimos los valores
@@ -35,12 +36,14 @@ const fromCSV = (csv, nAttrs) => {
             person[dataName[x]] = dataValues[x];
         }
         
+        // Anhadimos el {} con los datos al Array principal
         people.push(person);
     }
-    console.log(people);
+
+    // Devolvemos el array con todos los datos
     return people;
 };
 
 // Mostramos en el log
-const result = fromCSV(data);
+const result = fromCSV(data, 6);
 console.log(result);
