@@ -4,7 +4,7 @@ const newValue = "furor";
 
 const replaceAt = (arr, index, newElement) => {
     // Creamos copias para no usar los originales
-    let arr_i = arr;
+    let arr_i = [...arr];
     let index_i = index;
     let newElement_i = newElement;
 

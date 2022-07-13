@@ -35,7 +35,7 @@ const fromCSV = (csv, nAttrs) => {
         for (let x = 0; x < nAttrs; x++) {
             person[dataName[x]] = dataValues[x];
         }
-        
+
         // Anhadimos el {} con los datos al Array principal
         people.push(person);
     }
