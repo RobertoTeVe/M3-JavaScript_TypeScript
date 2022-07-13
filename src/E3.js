@@ -32,7 +32,8 @@ const data = [
 ];
 
 const winnerByYear = (arr, year) => {
-    // Copiamos el array
+
+    // Copiamos el array e inicializamos arrays que usaremos
     const arr_i = [...arr];
     let index = 0;
     const arr_pos = [];
@@ -47,18 +48,21 @@ const winnerByYear = (arr, year) => {
         }
     }
 
-    // una vez tenemos el array con todos las personas, se ordenan y nos quedamos con las 3 primeras posiciones
-    arr_pos.sort((a, b) => { return b.ranking - a.ranking });
-    arr_pos.length = 3;
+    // Nos aseguramos de que tenemos datos sobre el anho introducido
+    if (arr_pos.length == 0) return "There's no data around that year!";
+    else {
+        // una vez tenemos el array con todos las personas, se ordenan y nos quedamos con las 3 primeras posiciones
+        arr_pos.sort((a, b) => { return b.ranking - a.ranking });
+        arr_pos.length = 3;
 
-    // Acortamos los objetos y nos quedamos con los nombres
-    for (let key in arr_pos){
-        arr_names.push(arr_pos[key]["name"]);
+        // Acortamos los objetos y nos quedamos con los nombres
+        for (let key in arr_pos) {
+            arr_names.push(arr_pos[key]["name"]);
+        }
+
+        // Devolvemos el array con el top 3
+        return arr_names;
     }
-
-    // Devolvemos el array con el top 3
-    return arr_names;
-
 };
 
-console.log(winnerByYear(data, 2000));
+console.log(winnerByYear(data, 1999));
