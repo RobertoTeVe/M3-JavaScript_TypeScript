@@ -81,19 +81,19 @@ const collection = [
   },
 ];
 
-// Cogemos el Objeto, creamos uno donde la ID sea el numero y el valor de esa ID sea el resto del objeto
 
 const normalize = (arr) => {
 
+  // Variable para almacenar el objeto que devolveremos
   let returnObj = {};
 
-  for (const key in arr) {
+  arr.forEach(element => {
 
     // Separamos el id de los otros valores y despues vamos anhadiendo cada id (key) con sus valores (value)
-    let idNum = arr[key].id;
+    let idNum = element.id;
     const values = ({ id, ...otherValues }) => (otherValues);
-    returnObj[idNum] = (values(arr[key]));
-  }
+    returnObj[idNum] = (values(element));
+  });
 
   return returnObj;
 };
