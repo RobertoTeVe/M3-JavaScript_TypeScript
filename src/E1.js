@@ -14,7 +14,7 @@ const data = `id,name,surname,gender,email,picture
 const fromCSV = (csv, nAttrs) => {
 
     // Separamos el csv por los saltos de linea
-    const outputVal = data.split('\n');
+    const outputVal = csv.split('\n');
 
     // Diccionario vacio para uso posterior
     let person = {};
