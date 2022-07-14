@@ -39,7 +39,6 @@ const winnerByYear = (arr, year) => {
     const arr_pos = [];
     const arr_names = [];
 
-    // Nos aseguramos de que existen datos del anho introducido
     for (let key in arr_i) {
         // Si el anho coincide nos quedamos con el object
         if (arr_i[key]["year"] == year) {

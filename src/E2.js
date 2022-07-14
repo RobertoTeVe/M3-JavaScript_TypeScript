@@ -10,7 +10,7 @@ const replaceAt = (arr, index, newElement) => {
     // Cambiamos el valor por el que queremos
     arr_val = newElement;
         
-    // Sustituimos la posicion index del array arr_i con el valor newElement_i
+    // Sustituimos la posicion index del array arr_i con el valor arr_val
     arr_i[index] = arr_val;
 
     return arr_i;
