@@ -1,11 +1,10 @@
 const elements = [0, 1, false, 2, "", 3];
 
 const compact = (arg) => {
-    const compact = (arg) => { 
-        if (typeof arg != "object") return arg;
-        else return "Nope";
-        // Diferentiate type
-    };
+    for (let i = 0; i < arg.length(); i++) {
+        if (!arg[i]) console.log("It has a falsy element");
+        else console.log("No falsy");
+    }
 };
 
 console.log(compact(123)); // 123

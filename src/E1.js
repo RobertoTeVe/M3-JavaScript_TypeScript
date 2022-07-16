@@ -13,10 +13,8 @@ const data = `id,name,surname,gender,email,picture
 
 const fromCSV = (csv, nAttrs) => {
 
-    // Separamos el csv por los saltos de linea
+    // Separamos el csv por los saltos de linea y creamos un array y un diccionario
     const outputVal = csv.split('\n');
-
-    // Diccionario vacio para uso posterior
     let person = {};
     let people = [];
 
@@ -35,8 +33,7 @@ const fromCSV = (csv, nAttrs) => {
         for (let x = 0; x < nAttrs; x++) {
             person[dataName[x]] = dataValues[x];
         }
-
-        // Anhadimos el {} con los datos al Array principal
+        // Anhadimos la persona al diccionario de gente
         people.push(person);
     }
 
