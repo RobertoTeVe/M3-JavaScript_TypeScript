@@ -4,6 +4,7 @@ const compact = (arg) => {
     const compact = (arg) => { 
         if (typeof arg != "object") return arg;
         else return "Nope";
+        // Diferentiate type
     };
 };
 
