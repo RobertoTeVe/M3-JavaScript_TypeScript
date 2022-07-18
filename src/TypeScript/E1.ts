@@ -11,7 +11,7 @@
 //     },
 //   ];
   
-//   const logStudent = ({ name, age }: unknown) => {
+//   const logStudent = ({ name , age }: unknown) => {
 //     console.log(`  - ${name}, ${age}`);
 //   };
   
