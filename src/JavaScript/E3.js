@@ -35,7 +35,6 @@ const winnerByYear = (arr, year) => {
 
     // Copiamos el array e inicializamos arrays que usaremos
     const arr_i = [...arr];
-    let index = 0;
     const arr_pos = [];
     const arr_names = [];
 
@@ -43,7 +42,6 @@ const winnerByYear = (arr, year) => {
         // Si el anho coincide nos quedamos con el object
         if (arr_i[key]["year"] == year) {
             arr_pos.push(arr_i[key]);
-            index++;
         }
     }
 
