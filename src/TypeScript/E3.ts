@@ -28,6 +28,14 @@ const users: Teacher[] = [
     },
 ];
 
+function isTeacher(user:Teacher) {
+    
+}
+
+function isStudent(user:Teacher) {
+    
+}
+
 const logUser = (user: Teacher) => {
     let extraInfo: string = "";
     
