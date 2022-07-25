@@ -2,15 +2,15 @@ const elements = ["lorem", "ipsum", "dolor", "sit", "amet"];
 const index = 2;
 const newValue = "furor";
 
+// Creamos la copia del array, guardamos el valor a cambiar, lo cambiamos y lo sustituimos en el array copiado para despues devolverlo
+
 const replaceAt = (arr, index, newElement) => {
-    // Creamos copias para no usar los originales
+
     let arr_i = [...arr];
     let arr_val = [...arr].slice(index, index+1);
 
-    // Cambiamos el valor por el que queremos
     arr_val = newElement;
         
-    // Sustituimos la posicion index del array arr_i con el valor arr_val
     arr_i[index] = arr_val;
 
     return arr_i;

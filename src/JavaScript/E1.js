@@ -10,7 +10,6 @@ const data = `id,name,surname,gender,email,picture
 05298880,Marco,Campos,male,marco.campos@example.com,https://randomuser.me/api/portraits/men/67.jpg
 61539018,Marco,Calvo,male,marco.calvo@example.com,https://randomuser.me/api/portraits/men/86.jpg`;
 
-
 const fromCSV = (csv, nAttrs) => {
 
     // Separamos el csv por los saltos de linea y creamos un array y un diccionario
@@ -25,15 +24,15 @@ const fromCSV = (csv, nAttrs) => {
     if (nAttrs === undefined || nAttrs > dataName.length) nAttrs = dataName.length;
 
     // Recorremos cada uno de las entradas del array con datos de personas
+    // Separamos los valores, metiendolos en un array y despues se anhade al array final
     for (let i = 1; i < outputVal.length; i++) {
-        // Separamos los valores y los metemos en un array
+
         const dataValues = outputVal[i].split(',');
 
-        // Recorremos el array e introducimos los valores
         for (let x = 0; x < nAttrs; x++) {
             person[dataName[x]] = dataValues[x];
         }
-        // Anhadimos la persona al diccionario de gente
+
         people.push(person);
     }
 
