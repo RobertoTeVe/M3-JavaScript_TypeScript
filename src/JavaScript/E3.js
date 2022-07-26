@@ -33,31 +33,32 @@ const data = [
 
 const winnerByYear = (arr, year) => {
 
-    // Copiamos el array e inicializamos arrays que usaremos
+    // Spread Operator gets used, also two more arrays are created
     const arr_i = [...arr];
     const arr_pos = [];
     const arr_names = [];
 
     for (let key in arr_i) {
-        // Si el anho coincide nos quedamos con el object
+
+        // If the year coincides we keep that line
         if (arr_i[key]["year"] == year) {
             arr_pos.push(arr_i[key]);
         }
     }
 
-    // Nos aseguramos de que tenemos datos sobre el anho introducido
+    // We make sure that we have data around that year
     if (arr_pos.length == 0) return "There's no data around that year!";
     else {
-        // una vez tenemos el array con todos las personas, se ordenan y nos quedamos con las 3 primeras posiciones
+        // Then we order the people by ranking and keep only the first 3
         arr_pos.sort((a, b) => { return b.ranking - a.ranking });
         arr_pos.length = 3;
 
-        // Acortamos los objetos y nos quedamos con los nombres
+        // Array gets shorten to only keep the name
         for (let key in arr_pos) {
             arr_names.push(arr_pos[key]["name"]);
         }
 
-        // Devolvemos el array con el top 3
+        // Return the Top 3 Array
         return arr_names;
     }
 };

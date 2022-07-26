@@ -1,29 +1,29 @@
 const elements = [0, 1, false, 2, "", 3];
 
 const compact = (arg) => {
-    // Guardamos el tipo de valor que es para despues entrar en el if por el sitio correcto
+    // We save the value type 
     const valueType = Object.prototype.toString.call(arg);
 
     if (valueType === '[object Array]') {
-        // Si es un Array recorremos todos los elementos y movemos los no falsy a uno nuevo para ser devuelto
+        // If its an Array, we go over all the elements and if its falsy, it gets removed
         let newArr = [];
 
         arg.forEach(element => { if (element) newArr.push(element); });
-            
+
         return newArr;
 
     } else if (valueType === '[object Object]') {
-        // Si es un Objeto recorremos todos los elementos y movemos los no falsy a uno nuevo para ser devuelto
+        // If its an Object, we go over all the elements and if its falsy, it gets removed
         let newObj = {};
 
-        for (const key in arg){
+        for (const key in arg) {
             if (arg[key]) newObj[key] = arg[key];
         }
 
         return newObj;
 
     } else {
-        // Si no es ninguna de las anteriores, devolvemos lo que nos ha enviado
+        // If it's another type of value, we return it as it is
         return arg;
     }
 };

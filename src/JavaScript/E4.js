@@ -84,11 +84,11 @@ const collection = [
 
 const normalize = (arr) => {
 
-  // Variable para almacenar el objeto que devolveremos
   let returnObj = {};
 
   arr.forEach(element => {
 
+    // The ID is kept aside and then to each id (key) the value is added
     // Separamos el id de los otros valores y despues vamos anhadiendo cada id (key) con sus valores (value)
     let idNum = element.id;
     const values = ({ id, ...otherValues }) => (otherValues);

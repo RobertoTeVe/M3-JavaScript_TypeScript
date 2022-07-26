@@ -2,7 +2,7 @@ const elements = ["lorem", "ipsum", "dolor", "sit", "amet"];
 const index = 2;
 const newValue = "furor";
 
-// Creamos la copia del array, guardamos el valor a cambiar, lo cambiamos y lo sustituimos en el array copiado para despues devolverlo
+// We use the spread operator to copy the values into a new array, the value that we want to change gets saved by slicing the array
 
 const replaceAt = (arr, index, newElement) => {
 
