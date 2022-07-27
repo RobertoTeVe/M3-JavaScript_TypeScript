@@ -28,13 +28,13 @@ const students: Student[] = [
     },
 ];
 
-const filterStudentsBy = (students: Student[], criteria: object): Student[] => {
+const filterStudentsBy = (students: Student[], criteria: any): Student[] => {
 
     return students.filter((user) => {
 
         const criteriaKeys = Object.keys(criteria);
 
-        return criteriaKeys.every((fieldName: string) => {
+        return criteriaKeys.every((fieldName) => {
 
             return criteria[fieldName] == students[fieldName];
         });
@@ -46,4 +46,4 @@ const LogStudent = ({ name, occupation }: Student) => {
 };
 
 console.log("Students of age 35:");
-filterStudentsBy(students, { age: 35 }).forEach(LogStudent);
+filterStudentsBy(students, {age : 35}).forEach(LogStudent);
