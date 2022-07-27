@@ -1,3 +1,4 @@
+
 interface Teacher {
     name: string;
     age: number;
@@ -5,7 +6,13 @@ interface Teacher {
     occupation?: string;
 }
 
-const users: Teacher[] = [
+interface Student {
+    name: string;
+    age: number;
+    occupation: string;
+}
+
+const Users: any = [
     {
         name: "Luke Patterson",
         age: 32,
@@ -28,24 +35,28 @@ const users: Teacher[] = [
     },
 ];
 
+function isStudent(user:Student) {
+    return user.occupation;
+}
+
 function isTeacher(user:Teacher) {
-    
+    return user.subject;
 }
 
-function isStudent(user:Teacher) {
-    
-}
-
-const logUser = (user: Teacher) => {
-    let extraInfo: string = "";
-    
+const LogUser = (user: any) => {
+    let extraInfo: string;
     if (user.occupation) {
         extraInfo = user.occupation;
-    } else if (user.subject) {
+    } else {
         extraInfo = user.subject;
     }
-
     console.log(`  - ${user.name}, ${user.age}, ${extraInfo}`);
 };
 
-users.forEach(logUser);
+const logPerson = (user: any) => {
+    
+    console.log(`  - ${user.name}, ${user.age}, ${isStudent(user) || isTeacher(user)}`);
+}
+
+Users.forEach(LogUser);
+Users.forEach(logPerson);
