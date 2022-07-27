@@ -28,7 +28,7 @@ const students: Student[] = [
     },
 ];
 
-const filterStudentsBy = (students: Student[], criteria: any): Student[] => {
+const filterStudentsBy = (students: Student[], criteria: Object): Student[] => {
 
     return students.filter((user) => {
 
@@ -36,7 +36,7 @@ const filterStudentsBy = (students: Student[], criteria: any): Student[] => {
 
         return criteriaKeys.every((fieldName) => {
 
-            return criteria[fieldName] == students[fieldName];
+            return criteria[fieldName] === user[fieldName];
         });
     });
 };
